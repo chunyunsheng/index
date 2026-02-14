@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -109,7 +109,7 @@
 
   <!-- 引导页：星空 + 文字 + 按钮 -->
   <div id="intro-page">
-    <h1>张可欣：</h1>
+    <h1>张可心：</h1>
     <h2>新年快乐！</h2>
     <button id="next-btn">点击下一步</button>
   </div>
@@ -164,7 +164,7 @@
       function bodyPlayMusic() {
         if (shouci) {
           shouci = false;
-          audio.play();
+          // 移除音频播放
           console.log(shouci);
         }
       }
@@ -173,12 +173,13 @@
   <!-- onclick="bodyPlayMusic()" -->
 
   <body>
-    <audio
+    <!-- 移除背景音乐元素 -->
+    <!-- <audio
       id="audioDom"
       src="bgm/好运来.mp3"
       preload="auto"
       loop="loop"
-    ></audio>
+    ></audio> -->
 
     <div
       id="yhBtn"
@@ -337,19 +338,11 @@
 
     <script>
       function musicPlay(isPlay) {
-        var media = document.querySelector('#audioDom');
-        if (isPlay && media.paused) {
-          media.play();
-        }
-        if (!isPlay && !media.paused) {
-          media.pause();
-        }
+        // 移除音频播放逻辑
       }
 
       function musicInBrowserHandler() {
-        setTimeout(function () {
-          musicPlay(true);
-        }, 0);
+        // 移除音频播放
       }
       document.body.addEventListener('touchstart', musicInBrowserHandler);
       $('#yhBtn').click((e) => {
@@ -359,11 +352,7 @@
           fireworks();
         }, 1600); //
         setTimeout(() => {
-          function audioAutoPlay() {
-            var audio = document.getElementById('audioDom');
-            audio.play();
-          }
-          audioAutoPlay();
+          // 移除音频播放
         }, 800); //
         console.log(
           updateConfig({
